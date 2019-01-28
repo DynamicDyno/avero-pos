@@ -1,0 +1,41 @@
+.nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -250px;
+  width: 250px;
+  background-color: #333;
+}
+
+.nav--open {
+  transform: translate(250px, 0);
+  transition-duration: .15s;
+}
+
+.nav--closed {
+  transform: translate(-250px, 0);
+  transition-duration: .15s;
+}
+
+.nav__close-button {
+  margin: 20px;
+}
+
+.nav__list {
+  padding-left: 20px;
+}
+
+.nav__li {
+  list-style: none;
+}
+
+.nav__link {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 0;
+}
+
+.nav__link:hover {
+  text-decoration: underline;
+}

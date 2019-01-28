@@ -1,0 +1,35 @@
+.table {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: #31708e;
+  margin: 20px;
+}
+
+.table__title {
+  flex-basis: 100%;
+  text-align: center;
+  color: #f7f9fb;
+}
+
+.table__link {
+  text-align: center;
+  color: #f7f9fb;
+  text-decoration: none;
+  background-color: #31708e;
+  border: none;
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.table__link:hover {
+  text-decoration: underline;
+}
+
+.table__open-check-container {
+  text-align: center;
+}

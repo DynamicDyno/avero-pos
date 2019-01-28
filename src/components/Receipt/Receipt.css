@@ -1,0 +1,13 @@
+.receipt {
+  display: block;
+  background-color: #31708e;
+  color: #f7f9fb;
+  margin: 10px 10px 0 0;
+  padding: 20px;
+}
+
+@media (min-width: 700px) {
+  .receipt {
+    flex: 0 0 250px;
+  }
+}

@@ -1,0 +1,11 @@
+.tables {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 500px) {
+  .tables {
+    flex-direction: row;
+  }
+}

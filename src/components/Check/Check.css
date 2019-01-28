@@ -1,0 +1,9 @@
+.check {
+  display: block;
+}
+
+@media (min-width: 700px) {
+  .check {
+    display: flex;
+  }
+}

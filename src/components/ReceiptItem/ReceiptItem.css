@@ -1,0 +1,12 @@
+.receipt-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.receipt-item__name {
+  margin: 10px 0;
+}
+
+.receipt-item__void-item {
+  align-self: center;
+}

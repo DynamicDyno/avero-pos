@@ -1,26 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
+import { BrowserRouter as Router } from "react-router-dom";
+import { 
+  Checklist,
+  Check,
+  Navigation,
+  Header,
+  Tables,
+} from './components';
 import './App.css';
 
 class App extends Component {
+  state = {
+    menuOpen: false,
+  }
+
+  toggleMenuClicked = () => {
+    this.setState(previousState => ( {
+      menuOpen: !previousState.menuOpen,
+    }));
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div>
+          <Navigation
+            toggleMenu={this.toggleMenuClicked}
+            isOpen={this.state.menuOpen} />
+          <Header toggleMenu={this.toggleMenuClicked} />
+          <Route exact={true} path='/' component={Tables}/>
+          <Route path='/checks' component={Checklist}/>
+          <Route path='/check/:checkId' component={Check}/>
+        </div>
+      </Router>
     );
   }
 }

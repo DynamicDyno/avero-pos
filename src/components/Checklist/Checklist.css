@@ -1,0 +1,39 @@
+.checklist {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.checklist__filter-links {
+  display: flex;
+  justify-content: center;
+}
+
+.checklist__selected-filter {
+  line-height: 38px;
+}
+
+.checklist__filter-button {
+  margin: 10px;
+}
+
+.checklist__list {
+  border: 1px solid #31708e;
+}
+
+.checklist__check {
+  background-color: #5085a5;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.checklist__check:nth-child(2n + 1) {
+  background-color: #31708e;
+}
+
+.checklist__check-title {
+  color: #f7f9fb;
+}
+
+.checklist__check-created-date {
+  color: #f7f9fb;
+}
