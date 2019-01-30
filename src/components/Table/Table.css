@@ -1,7 +1,6 @@
 .table {
-  width: 200px;
-  height: 200px;
   display: flex;
+  flex-basis: 1;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -17,19 +16,36 @@
 }
 
 .table__link {
+  display: inline-block;
   text-align: center;
   color: #f7f9fb;
   text-decoration: none;
   background-color: #31708e;
   border: none;
   font-size: 1em;
-  margin: 5px 0;
+  margin: 5px 0 15px;
+}
+
+.table__link:hover {
+  color: #fff;
 }
 
 .table__link:hover {
   text-decoration: underline;
 }
 
+.table__icon {
+  font-size: 60px;
+}
+
 .table__open-check-container {
   text-align: center;
+}
+
+@media (min-width: 500px) {
+  .table {
+    width: 200px;
+    height: 200px;
+    display: flex;
+  }
 }

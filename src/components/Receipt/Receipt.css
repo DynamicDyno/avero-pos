@@ -2,12 +2,71 @@
   display: block;
   background-color: #31708e;
   color: #f7f9fb;
-  margin: 10px 10px 0 0;
+  margin: 10px 10px 0;
   padding: 20px;
+  overflow: hidden;
+}
+
+.receipt__close-check-link {
+  float: right;
+  margin-top: 10px;
+}
+
+.receipt__total-line-item {
+  display: flex;
+  border-top: 1px solid #f7f9fb;
+}
+
+.receipt__name-space {
+  flex-basis: 70%;
+  margin: 10px 0;
+}
+
+.receipt__total-price {
+  text-align: right;
+  flex-basis: 15%;
+  padding-right: 30px;
+  margin: 10px 0;
+}
+
+.receipt__void-space {
+  flex-basis: 15%;
+}
+
+.receipt__totals {
+  display: flex;
+}
+
+.receipt__tip {
+  text-align: right;
+  flex-basis: 15%;
+  padding-right: 30px;
+  margin: 10px 0;
+}
+
+.receipt__tax {
+  text-align: right;
+  flex-basis: 15%;
+  padding-right: 30px;
+  margin: 10px 0;
+}
+
+.receipt__close-check-link {
+  font-size: 20px;
+  color: #f7f9fb;
+}
+
+.receipt__close-check-link:hover {
+  text-decoration: underline;
+}
+
+.receipt__close-check-icon {
+  vertical-align: -5px;
+  font-size: 26px;
 }
 
 @media (min-width: 700px) {
   .receipt {
-    flex: 0 0 250px;
+    flex: 0 0 360px;
   }
 }

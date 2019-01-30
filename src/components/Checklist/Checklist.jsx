@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import * as checksActions from '../../actions/checksActions';
 import * as tablesActions from '../../actions/tablesActions';
 import { filterOpenChecks, filterClosedChecks } from '../../reducers/rootReducer';
@@ -39,6 +40,8 @@ class Checklist extends Component {
   }
 
   getTableNumber = (tableId) => {
+    if(this.props.tables.byId[tableId] === undefined) return null;
+    
     return this.props.tables.byId[tableId].number;
   }
 
@@ -59,6 +62,10 @@ class Checklist extends Component {
       <div className="checklist__check" key={id}>
         <h3 className="checklist__check-title">Table #{this.getTableNumber(this.props.checks.byId[id].tableId)}</h3>
         <p className="checklist__check-created-date">Created on: {this.formatDate(this.props.checks.byId[id].dateCreated)}</p>
+        <Link
+            to={`check/${id}`}
+            className="checklist__link">View check
+          </Link>
       </div>
     );
     return listItems

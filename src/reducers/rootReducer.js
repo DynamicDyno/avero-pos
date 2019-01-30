@@ -2,13 +2,11 @@ import {combineReducers} from 'redux';
 import tables from './tablesReducer';
 import checks from './checksReducer';
 import items from './itemsReducer';
-import check from './checkReducer';
 
 const rootReducer = combineReducers({
   tables,
   checks,
   items,
-  check,
 });
 
 // Selectors

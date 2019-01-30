@@ -6,9 +6,9 @@ import { Item } from '../'
 import './Items.css';
 
 class Items extends Component {
-  componentDidMount() {
-    this.props.fetchItems();
-  }
+  // componentDidMount() {
+  //   this.props.fetchItems();
+  // }
 
   renderItems() {
     const itemsHashes = this.props.items.byId;

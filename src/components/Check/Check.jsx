@@ -1,28 +1,42 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as checkActions from '../../actions/checkActions';
+import * as checksActions from '../../actions/checksActions';
+import * as itemsActions from '../../actions/itemsActions';
 import { Items, Receipt } from "../"
 import './Check.css';
 
 class Check extends Component {
   addItem = (itemId) => {
-    this.props.addItemToCheck(itemId, this.props.check.id);
+    this.props.addItemToCheck(itemId, this.props.match.params.checkId);
+  }
+  voidItem = (orderedItemId) => {
+    this.props.voidItem(orderedItemId, this.props.match.params.checkId);
   }
 
   componentDidMount() {
+    this.props.fetchItems();
     this.props.getCheck(this.props.match.params.checkId);
   }
 
-  componentDidUpdate() {
-    console.log('did update check');
-  }
+  renderItems = () => {
+    const check = this.props.checks.byId[this.props.match.params.checkId];
 
+    if(check !== undefined && !check.closed) {
+      return <Items onClick={this.addItem} />
+    } else {
+      return null;
+    }
+  }
+  
   render() {
     return (
       <div className="check">
-        <Items onClick={this.addItem} />
-        <Receipt check={this.props.check} />
+        {this.renderItems()}
+        
+        <Receipt
+          checkId={this.props.match.params.checkId}
+          voidItemHandler={this.voidItem} />
       </div>
     );
   }
@@ -30,12 +44,12 @@ class Check extends Component {
 
 function mapStateToProps(state) {
   return {
-    check: state.check,
+    checks: state.checks,
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(checkActions, dispatch);
+  return bindActionCreators({...checksActions, ...itemsActions}, dispatch);
 }
 
 export default connect(

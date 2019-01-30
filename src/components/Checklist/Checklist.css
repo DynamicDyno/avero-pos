@@ -9,11 +9,15 @@
 }
 
 .checklist__selected-filter {
-  line-height: 38px;
+  line-height: 50px;
+  padding: 0 10px;
 }
 
 .checklist__filter-button {
   margin: 10px;
+  background-color: #31708e;
+  color: #f7f9fb;
+  padding: 10px 20px;
 }
 
 .checklist__list {
@@ -23,7 +27,7 @@
 .checklist__check {
   background-color: #5085a5;
   margin: 0;
-  padding: 10px 20px;
+  padding: 20px;
 }
 
 .checklist__check:nth-child(2n + 1) {
@@ -32,8 +36,18 @@
 
 .checklist__check-title {
   color: #f7f9fb;
+  margin-top: 0;
 }
 
 .checklist__check-created-date {
   color: #f7f9fb;
+}
+
+.checklist__link {
+  color: #f7f9fb;
+  text-decoration: none;
+}
+
+.checklist__link:hover {
+  text-decoration: underline;
 }

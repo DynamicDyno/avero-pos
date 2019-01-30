@@ -19,6 +19,8 @@
 
 .nav__close-button {
   margin: 20px;
+  font-size: 20px;
+  color: #f7f9fb;
 }
 
 .nav__list {

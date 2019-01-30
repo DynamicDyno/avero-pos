@@ -5,8 +5,34 @@
 
 .receipt-item__name {
   margin: 10px 0;
+  flex-basis: 70%;
+}
+
+.receipt-item__price {
+  text-align: right;
+  flex-basis: 15%;
+  padding-right: 30px;
+  margin: 10px 0;
+}
+
+.receipt-item__price--voided {
+  text-decoration: line-through;
+}
+
+.receipt-item__void {
+  align-self: center;
+  flex-basis: 15%;
+  text-align: right;
 }
 
 .receipt-item__void-item {
-  align-self: center;
+  display: block;
+  width: 100%;
+  padding: 8px 0 0;
+  font-size: 26px;
+  color: #dc3545;
+}
+
+.receipt-item__name--voided {
+  text-decoration: line-through;
 }

@@ -13,6 +13,9 @@
 
 .header__menu-button {
   margin: 20px;
+  font-size: 30px;
+  color: #f7f9fb;
+  line-height: 22px;
 }
 
 .header__title {

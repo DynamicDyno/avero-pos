@@ -8,3 +8,4 @@ export const GET_ITEMS = 'GET_ITEMS';
 
 export const GET_CHECK = 'GET_CHECK';
 export const ADD_ITEM_TO_CHECK = 'ADD_ITEM_TO_CHECK';
+export const VOID_ITEM = 'VOID_ITEM';

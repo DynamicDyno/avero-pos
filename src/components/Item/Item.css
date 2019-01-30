@@ -6,6 +6,10 @@
   border: 0;
 }
 
+.item:hover {
+  background-color: #5085a5;
+}
+
 .item__name {
   text-align: center;
   margin-bottom: 10px;

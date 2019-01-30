@@ -2,6 +2,9 @@ import {
   GET_CHECKS,
   CREATE_CHECK,
   CLOSE_CHECK,
+  GET_CHECK,
+  ADD_ITEM_TO_CHECK,
+  VOID_ITEM,
 } from './actionTypes';
 
 function baseUrl() {
@@ -29,6 +32,28 @@ export function closeCheckSuccess(data) {
   };
 }
 
+export function getCheckSuccess(data) {
+  return { 
+    type: GET_CHECK, 
+    payload: data,
+  };
+}
+
+export function addItemSuccess(data) {
+  return { 
+    type: ADD_ITEM_TO_CHECK, 
+    payload: data,
+  };
+}
+
+export function voidItemSuccess(data) {
+  return { 
+    type: VOID_ITEM, 
+    payload: data,
+  };
+}
+
+// grouped Checks
 export function fetchChecks() {
   return (dispatch) => {
     return fetch(baseUrl(), {
@@ -94,6 +119,83 @@ export function closeCheck(checkId) {
     })
     .then(json => {
       dispatch(closeCheckSuccess(json));
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  };
+}
+
+
+// individual Check
+export function getCheck(checkId) {
+  return (dispatch) => {
+    return fetch(`${baseUrl()}/${checkId}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': process.env.REACT_APP_AUTH_TOKEN,
+      }
+    })
+    .then(response => {
+      if(!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json();
+    })
+    .then(json => {
+      dispatch(getCheckSuccess(json));
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  };
+}
+
+export function addItemToCheck(itemId, checkId) {
+  return (dispatch) => {
+    return fetch(`${baseUrl()}/${checkId}/addItem`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': process.env.REACT_APP_AUTH_TOKEN,
+      },
+      body: JSON.stringify({
+        "itemId": itemId,
+      })
+    })
+    .then(response => {
+      if(!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json();
+    })
+    .then(json => {
+      dispatch(addItemSuccess(json));
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  };
+}
+
+export function voidItem(orderedItemId, checkId) {
+  return (dispatch) => {
+    return fetch(`${baseUrl()}/${checkId}/voidItem`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': process.env.REACT_APP_AUTH_TOKEN,
+      },
+      body: JSON.stringify({
+        "orderedItemId": orderedItemId,
+      })
+    })
+    .then(response => {
+      if(!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json();
+    })
+    .then(json => {
+      dispatch(voidItemSuccess(json));
     })
     .catch(error => {
       console.error(error);

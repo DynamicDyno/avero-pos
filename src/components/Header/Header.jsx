@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import { MdMenu } from 'react-icons/md';
 import { Button } from '../';
 import './Header.css';
 
@@ -8,7 +9,7 @@ class Header extends Component {
     return (
       <header className="header">
         <div className="header__menu-space">
-          <Button onClick={this.props.toggleMenu} className="header__menu-button">Menu</Button>
+          <Button onClick={this.props.toggleMenu} className="header__menu-button"><MdMenu /></Button>
         </div>
         <Route exact={true} path='/' render={() => <h2 className="header__title">Tables</h2>}/>
         <Route path='/checks' render={() => <h2 className="header__title">Checks</h2>}/>
