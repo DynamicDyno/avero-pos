@@ -16,5 +16,5 @@ It should open up a tab at `localhost:3000` for you. (npm install should also wo
 
 It has the bare minimum to work on any screen size.
 
-![phone view](https://i.imgur.com/BsKD2vW.png)
-![phone view](https://i.imgur.com/rb2UXEC.png)
+![phone view](https://i.imgur.com/fMSWQ50.png)
+![phone view](https://i.imgur.com/3p2jgaf.png)
